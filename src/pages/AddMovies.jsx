@@ -17,41 +17,47 @@ export default function AddMovies() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-xl shadow-md w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center mb-6">Add a New Movie</h1>
-        <form className="space-y-4" onSubmit={handleAddMovie}>
-          <input
-            type="text"
-            placeholder="Movie Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            required
-          />
-          <textarea
-            placeholder="Movie Description"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            rows="4"
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            required
-          />
-          <input
-            type="number"
-            placeholder="Rating (1-10)"
-            value={rating}
-            onChange={(e) => setRating(e.target.value)}
-            className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
-            min="1"
-            max="10"
-            step="0.1"
-            required
-          />
-          <button
-            type="submit"
-            className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 rounded-md transition duration-200"
-          >
+    <div className="min-vh-100 d-flex align-items-center justify-content-center bg-light">
+      <div
+        className="bg-white p-4 rounded shadow-sm w-100"
+        style={{ maxWidth: "500px" }}
+      >
+        <h1 className="text-center mb-4">Add a New Movie</h1>
+        <form onSubmit={handleAddMovie}>
+          <div className="mb-3">
+            <input
+              type="text"
+              className="form-control"
+              placeholder="Movie Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <textarea
+              className="form-control"
+              placeholder="Movie Description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              rows="4"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="number"
+              className="form-control"
+              placeholder="Rating (1-10)"
+              value={rating}
+              onChange={(e) => setRating(e.target.value)}
+              min="1"
+              max="10"
+              step="0.1"
+              required
+            />
+          </div>
+          <button type="submit" className="btn btn-indigo w-100 py-2">
             Add Movie
           </button>
         </form>
